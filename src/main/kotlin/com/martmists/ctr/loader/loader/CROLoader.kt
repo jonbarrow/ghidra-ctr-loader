@@ -50,18 +50,14 @@ open class CROLoader : AbstractLibrarySupportLoader(), CROUtilities {
     }
 
     override fun load(
-        provider: ByteProvider,
-        loadSpec: LoadSpec,
-        options: MutableList<Option>,
         program: Program,
-        monitor: TaskMonitor,
-        log: MessageLog,
+        importerSettings: ImporterSettings
     ) {
         createDataTypes(program)
-        createSegments(program, provider, monitor, log)
-        declareImportsAndExports(program, provider, monitor, log)
-        setLabels(program, provider, monitor)
-        applyPatches(program, provider)
+        createSegments(program, importerSettings.provider, importerSettings.monitor, importerSettings.log)
+        declareImportsAndExports(program, importerSettings.provider, importerSettings.monitor, importerSettings.log)
+        setLabels(program, importerSettings.provider, importerSettings.monitor)
+        applyPatches(program, importerSettings.provider)
     }
 
     protected open fun createDataTypes(program: Program) {
