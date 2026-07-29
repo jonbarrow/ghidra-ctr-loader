@@ -13,6 +13,7 @@ import ghidra.app.util.bin.ByteProvider
 import ghidra.app.util.cparser.C.CParser
 import ghidra.app.util.importer.MessageLog
 import ghidra.app.util.opinion.AbstractLibrarySupportLoader
+import ghidra.app.util.opinion.Loader.ImporterSettings
 import ghidra.app.util.opinion.LoadSpec
 import ghidra.program.model.data.DataTypeConflictHandler
 import ghidra.program.model.data.FileDataTypeManager
